@@ -1,5 +1,5 @@
 ## project title
- ## React Quizzer
+ React Quizzer
 
 Welcome to React Quizzer, a trivia quiz application built with React!# ReactQuizer# React Quizzer
 
