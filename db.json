@@ -1,0 +1,242 @@
+[
+    {
+        "id": "01",
+        "difficulty": "Easy",
+        "question": "Which of the following is the correct name of React.js?",
+        "options": [
+            "React",
+            "React.js",
+            "ReactJS",
+            "All of the above"
+        ],
+        "answer": "All of the above"
+    },
+    {
+        "id": "02",
+        "difficulty": "Easy",
+        "question": "Which of the following are the advantages of React.js?",
+        "options": [
+            "React.js can increase the application's performance with Virtual DOM.",
+            "React.js is easy to integrate with other frameworks such as Angular, BackboneJS since it is only a view library.",
+            "React.js can render both on client and server side.",
+            "All of the above"
+        ],
+        "answer": "All of the above"
+    },
+    {
+        "id": "03",
+        "difficulty": "Easy",
+        "question": "Which of the following is not a disadvantage of React.js?",
+        "options": [
+            "React.js has only a view layer. We have put your code for Ajax requests, events and so on.",
+            "The library of React.js is pretty large.",
+            "The JSX in React.js makes code easy to read and write.",
+            "The learning curve can be steep in React.js."
+        ],
+        "answer": "The JSX in React.js makes code easy to read and write."
+    },
+    {
+        "id": "04",
+        "difficulty": "Easy",
+        "question": "Which of the following command is used to install create-react-app?",
+        "options": [
+            "npm install -g create-react-app",
+            "npx create-react-app my-app",
+            "npm install create-react-app",
+            "npm install -f create-react-app"
+        ],
+        "answer": "npx create-react-app my-app"
+    },
+    {
+        "id": "05",
+        "difficulty": "Easy",
+        "question": "What of the following is used in React.js to increase performance?",
+        "options": [
+            "Original DOM",
+            "Virtual DOM",
+            "Both A and B.",
+            "None of the above."
+        ],
+        "answer": "Virtual DOM"
+    },
+    {
+        "id": "06",
+        "difficulty": "Easy",
+        "question": "What is the purpose of React's 'shouldComponentUpdate' lifecycle method?",
+        "options": [
+            "To determine if a component should re-render",
+            "To handle side effects after rendering",
+            "To access props before rendering",
+            "To fetch data from an API"
+        ],
+        "answer": "To determine if a component should re-render"
+    },
+    {
+        "id": "07",
+        "difficulty": "Easy",
+        "question": "What is the key difference between 'React.PureComponent' and 'React.Component'?",
+        "options": [
+            "PureComponent doesn't allow state changes",
+            "PureComponent doesn't support lifecycle methods",
+            "PureComponent implements shouldComponentUpdate with a shallow prop and state comparison",
+            "PureComponent is deprecated"
+        ],
+        "answer": "PureComponent implements shouldComponentUpdate with a shallow prop and state comparison"
+    },
+    {
+        "id": "08",
+        "difficulty": "Easy",
+        "question": "What does React's 'StrictMode' do?",
+        "options": [
+            "Enables strict type checking for props",
+            "Optimizes rendering performance",
+            "Triggers additional warnings and checks for common mistakes",
+            "Prevents state mutations"
+        ],
+        "answer": "Triggers additional warnings and checks for common mistakes"
+    },
+    {
+        "id": "09",
+        "difficulty": "Easy",
+        "question": "What is the purpose of 'React.Fragment'?",
+        "options": [
+            "To create reusable React components",
+            "To group multiple elements without adding extra nodes to the DOM",
+            "To define custom propTypes for components",
+            "To handle asynchronous data fetching"
+        ],
+        "answer": "To group multiple elements without adding extra nodes to the DOM"
+    },
+    {
+        "id": "10",
+        "difficulty": "Easy",
+        "question": "What is the 'useMemo' hook used for in React?",
+        "options": [
+            "To subscribe to changes in state",
+            "To perform lazy initialization",
+            "To optimize expensive calculations by memoizing the result",
+            "To handle browser events"
+        ],
+        "answer": "To optimize expensive calculations by memoizing the result"
+    },
+    {
+        "id": "11",
+        "difficulty": "Hard",
+        "question": "Which of the following is NOT a valid way to update state in React?",
+        "options": [
+            "Using setState() with a function callback",
+            "Using the useState hook's setter function directly",
+            "Mutating the state object directly",
+            "Passing an object to setState()"
+        ],
+        "answer": "Mutating the state object directly"
+    },
+    {
+        "id": "12",
+        "difficulty": "Hard",
+        "question": "What is the purpose of 'React.forwardRef'?",
+        "options": [
+            "To forward props from parent to child components",
+            "To create a reference to a DOM element",
+            "To forward refs from parent to child components",
+            "To define default props for a component"
+        ],
+        "answer": "To forward refs from parent to child components"
+    },
+    {
+        "id": "13",
+        "difficulty": "Hard",
+        "question": "What is the key difference between 'controlled' and 'uncontrolled' components in React?",
+        "options": [
+            "Controlled components are more efficient in terms of performance",
+            "Uncontrolled components don't require event handlers",
+            "Controlled components store their state in the DOM",
+            "Controlled components manage their state through React"
+        ],
+        "answer": "Controlled components manage their state through React"
+    },
+    {
+        "id": "14",
+        "difficulty": "Hard",
+        "question": "What is the purpose of the 'useReducer' hook in React?",
+        "options": [
+            "To manage complex state logic",
+            "To optimize rendering performance",
+            "To subscribe to changes in context",
+            "To handle user authentication"
+        ],
+        "answer": "To manage complex state logic"
+    },
+    {
+        "id": "15",
+        "difficulty": "Hard",
+        "question": "What is the key benefit of using React's 'Context' API?",
+        "options": [
+            "Simplifies passing props down multiple levels of components",
+            "Avoids prop drilling",
+            "Improves component encapsulation",
+            "Enforces strict typing for props"
+        ],
+        "answer": "Avoids prop drilling"
+    },
+    {
+        "id": "16",
+        "difficulty": "Hard",
+        "question": "Which of the following is NOT a valid way to update state in React?",
+        "options": [
+            "Using setState() with a function callback",
+            "Using the useState hook's setter function directly",
+            "Mutating the state object directly",
+            "Passing an object to setState()"
+        ],
+        "answer": "Mutating the state object directly"
+    },
+    {
+        "id": "17",
+        "difficulty": "Hard",
+        "question": "What is the purpose of 'React.forwardRef'?",
+        "options": [
+            "To forward props from parent to child components",
+            "To create a reference to a DOM element",
+            "To forward refs from parent to child components",
+            "To define default props for a component"
+        ],
+        "answer": "To forward refs from parent to child components"
+    },
+    {
+        "id": "18",
+        "difficulty": "Hard",
+        "question": "What is the key difference between 'controlled' and 'uncontrolled' components in React?",
+        "options": [
+            "Controlled components are more efficient in terms of performance",
+            "Uncontrolled components don't require event handlers",
+            "Controlled components store their state in the DOM",
+            "Controlled components manage their state through React"
+        ],
+        "answer": "Controlled components manage their state through React"
+    },
+    {
+        "id": "19",
+        "difficulty": "Hard",
+        "question": "What is the purpose of the 'useReducer' hook in React?",
+        "options": [
+            "To manage complex state logic",
+            "To optimize rendering performance",
+            "To subscribe to changes in context",
+            "To handle user authentication"
+        ],
+        "answer": "To manage complex state logic"
+    },
+    {
+        "id": "20",
+        "difficulty": "Hard",
+        "question": "What is the key benefit of using React's 'Context' API?",
+        "options": [
+            "Simplifies passing props down multiple levels of components",
+            "Avoids prop drilling",
+            "Improves component encapsulation",
+            "Enforces strict typing for props"
+        ],
+        "answer": "Avoids prop drilling"
+    }
+]
