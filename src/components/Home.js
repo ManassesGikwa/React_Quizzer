@@ -2,19 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Home() {
-  const handleDifficultySelect = (difficulty) => {
-    // Handle difficulty selection logic here, e.g., navigate to the quiz page with selected difficulty
-    console.log('Selected difficulty:', difficulty);
-  };
-
   return (
     <div>
       <h1>Welcome to React Quizzer</h1>
       <p>A trivia quiz application built with React!</p>
-      <Link to="/quiz">Start Quiz</Link> {/* This link will navigate to the quiz page */}
+      <div>
+        <h2>Choose Difficulty</h2>
+        <Link to="/quiz">
+          <button>Easy</button>
+        </Link>
+        <Link to="/quiz">
+          <button>Hard</button>
+        </Link>
+      </div>
     </div>
   );
 }
 
 export default Home;
-

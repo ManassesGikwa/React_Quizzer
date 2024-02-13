@@ -66,3 +66,8 @@ const Question = () => {
           setCurrentQuestions(questions.filter(q => q.difficulty === 'Easy').slice(5, 10)); // Next set of easy questions
         } else {
           // Switch to hard questions
+        }
+      }
+    }
+  }
+}
