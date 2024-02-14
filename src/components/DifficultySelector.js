@@ -5,10 +5,11 @@ function DifficultySelector() {
   return (
     <div>
       <h2>Choose Difficulty</h2>
-      <Link to="/quiz">
+      // Link to the quiz page with the difficulty parameter 
+      <Link to="/quiz?difficulty=easy">
         <button>Easy</button>
       </Link>
-      <Link to="/quiz">
+      <Link to="/quiz?difficulty=hard">
         <button>Hard</button>
       </Link>
     </div>
