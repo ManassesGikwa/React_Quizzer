@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function DifficultySelector({ onSelect }) {
-  const handleSelect = (difficulty) => {
-    onSelect(difficulty);
-  };
-
+function DifficultySelector() {
   return (
     <div>
       <h2>Choose Difficulty</h2>
-      <button onClick={() => handleSelect('easy')}>Easy</button>
-      <button onClick={() => handleSelect('hard')}>Hard</button>
+      <Link to="/quiz">
+        <button>Easy</button>
+      </Link>
+      <Link to="/quiz">
+        <button>Hard</button>
+      </Link>
     </div>
   );
 }
