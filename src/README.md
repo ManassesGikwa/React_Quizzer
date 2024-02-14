@@ -1,5 +1,10 @@
 ## project title
  React Quizzer
+<<<<<<< HEAD
+=======
+
+Welcome to React Quizzer, a trivia quiz application built with React!# ReactQuizer# React Quizzer
+>>>>>>> a7abd07 (readme)
 
 Welcome to React Quizzer, a trivia quiz application built with React!
 
