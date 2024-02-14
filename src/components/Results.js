@@ -1,30 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-const Results = () => {
-  const [questions, setQuestions] = useState([]);
-  const [score, setScore] = useState(0);
+function Result({ easyScore, hardScore }) {
+  const totalScore = easyScore + hardScore;
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    // Fetch data from the API
-    fetch('https://react-quizer-vercel.vercel.app/questions')
-      .then(response => response.json())
-      .then(data => setQuestions(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
-
-  useEffect(() => {
-    // Calculate the score (for example, count the number of questions with result === 1)
-    const userScore = questions.filter(question => question.result === 1).length;
-    setScore(userScore);
-
-    // Update result on the server when the score is calculated
-    updateResult(userScore);
-  }, [questions]);
+    // Update result on the server when the component mounts
+    updateResult(totalScore);
+  }, [totalScore]);
 
   const updateResult = async (userScore) => {
     try {
-      const response = await fetch('http://localhost:3000/updateResult', {
+      const response = await fetch('http://localhost:3001/updateResult', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,16 +32,15 @@ const Results = () => {
 
   return (
     <div>
-      <h1>Your Quiz Result</h1>
-      <p>Your Score: {score}/10</p>
-
-      {score < 5 && <p>Oops, better luck next time!</p>}
-      {score >= 5 && score <= 8 && <p>Not bad, keep practicing!</p>}
-      {score > 8 && <p>Great job!</p>}
-
+      <h2>Quiz Completed!</h2>
+      <p>Easy Score: {easyScore}</p>
+      <p>Hard Score: {hardScore}</p>
+      <p>Total Score: {totalScore}</p>
+      {totalScore > 8 && <p>Congratulations!</p>}
+      {totalScore < 5 && <p>Better luck next time!</p>}
       <p>{message}</p>
     </div>
   );
-};
+}
 
-export default Results;
+export default Result;
