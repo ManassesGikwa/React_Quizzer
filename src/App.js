@@ -1,19 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import Result from './components/Result';
-import DifficultySelector from './components/DifficultySelector';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/result" element={<Result />} />
-        <Route path="/difficulty-selector" element={<DifficultySelector />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
