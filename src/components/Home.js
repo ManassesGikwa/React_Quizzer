@@ -8,10 +8,10 @@ function Home() {
       <p>A trivia quiz application built with React!</p>
       <div>
         <h2>Choose Difficulty</h2>
-        <Link to="/quiz">
+        <Link to="/questions">
           <button>Easy</button>
         </Link>
-        <Link to="/quiz">
+        <Link to="/questions">
           <button>Hard</button>
         </Link>
       </div>

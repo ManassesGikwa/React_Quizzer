@@ -1,19 +1,18 @@
-import './App.css';
-import DifficultySelector from './components/DifficultySelector';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import Questions from './components/Questions';
-import Results from './components/Results';
-
+import Result from './components/Result';
+import DifficultySelector from './components/DifficultySelector';
 
 function App() {
   return (
-    <div className="App">
-      <App />
-      <DifficultySelector />
-      <Home />
-      <Questions />
-      <Results />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="/difficulty-selector" element={<DifficultySelector />} />
+      </Routes>
+    </Router>
   );
 }
 
