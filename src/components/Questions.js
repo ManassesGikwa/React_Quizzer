@@ -66,3 +66,34 @@ const Question = () => {
           setCurrentQuestions(questions.filter(q => q.difficulty === 'Easy').slice(5, 10)); // Next set of easy questions
         } else {
           // Switch to hard questions
+          setDifficulty('hard');
+          setCurrentQuestions(questions.filter(q => q.difficulty === 'Hard').slice(5, 10)); // Next set of hard questions
+        }
+      }
+    } else {
+      // Quiz completed, navigate to results page or handle other logic
+    }
+  };
+
+  // Render questions and handle user's answers
+  return (
+    <div>
+      {currentQuestions.map((question, index) => (
+        <div key={index}>
+          <h3>{question.question}</h3>
+          <ul>
+            {question.options.map((option, optionIndex) => (
+              <li key={optionIndex}>
+                <button onClick={() => handleAnswer(option === question.answer, question.difficulty)}>
+                  {option}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Question;
