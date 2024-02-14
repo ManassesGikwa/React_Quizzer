@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-function DifficultySelector() {
+function DifficultySelector({ onSelect }) {
+  const handleSelect = (difficulty) => {
+    onSelect(difficulty);
+  };
+
   return (
-    <div>DifficultySelector</div>
-  )
+    <div>
+      <h2>Choose Difficulty</h2>
+      <button onClick={() => handleSelect('easy')}>Easy</button>
+      <button onClick={() => handleSelect('hard')}>Hard</button>
+    </div>
+  );
 }
 
-export default DifficultySelector
+export default DifficultySelector;
