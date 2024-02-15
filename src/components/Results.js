@@ -11,7 +11,7 @@ function Result({ easyScore, hardScore }) {
 
   const updateResult = async (userScore) => {
     try {
-      const response = await fetch('http://localhost:3001/updateResult', {
+      const response = await fetch('http://localhost:3001/updateResults', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
