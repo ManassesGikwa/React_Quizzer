@@ -83,20 +83,3 @@
     justify-content: center;
     padding: 20px;
   }
-  
-  .score {
-    font-size: 24px;
-  }
-  
-  .final-round {
-    margin-top: 20px;
-  }
-  
-  .homepage-button {
-    margin-top: 20px;
-    background-color: #666; 
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
