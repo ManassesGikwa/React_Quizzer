@@ -1,0 +1,110 @@
+/* App.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://media.istockphoto.com/id/517305732/photo/react-cubics.jpg?s=612x612&w=0&k=20&c=1v0KlFJE3fDItP18N0U0pDurHTyMrPWIfnTi2-l_Oww=');
+  background-size: cover;
+  background-position: center;
+
+
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color: #a3a3a5;
+  margin-bottom: 80%;
+
+
+
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #c5c1c1;
+
+}
+
+h3 {
+  font-size: 2rem;
+  color: azure;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: rgb(158, 236, 236);
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #111010;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #37393b;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #0b9629;
+}
+
+button,
+Home:hover {
+  background-color: #9e083a;
+}
+
+button.easy {
+  background-color: #28a745;
+}
+
+button.easy:hover {
+  background-color: #218838;
+}
+
+button.hard {
+  background-color: #dc3545;
+}
+
+button.hard:hover {
+  background-color: #c82333;
+}
+
+.link {
+  text-decoration: none;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #0056b3;
+}
