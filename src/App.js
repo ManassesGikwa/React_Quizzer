@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DifficultySelector />} />
         <Route path="/questions" element={<Questions />} />
-       
+        {/* Add more routes for other components as needed */}
       </Routes>
     </Router>
   );
