@@ -1,56 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import DifficultySelector from './components/DifficultySelector';
-import Questions from './components/Questions';
-import Result from './components/Result';
+import React from 'react';
+import { BrowserRouter as Router, Route, } from 'react-router-dom';
+import Home from './Home';
+import Quiz from './Quiz';
+import results from './Results';
+import './App.css'; // Importing App.css
+import DifficultySelector from './DifficultySelector'; // Importing DifficultySelector component
+import Questions from './Questions'; // Importing Questions component
 
 function App() {
-  const [difficulty, setDifficulty] = useState('');
-  const [questions, setQuestions] = useState([]);
-  const [quizStarted, setQuizStarted] = useState(false);
-  const [quizFinished, setQuizFinished] = useState(false);
-
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const response = await fetch('https://react-quizer-vercel.vercel.app/questions');
-        const data = await response.json();
-        const filteredQuestions = data.filter(question => question.difficulty === difficulty);
-        setQuestions(filteredQuestions);
-        setQuizStarted(true);
-      } catch (error) {
-        console.error('Error fetching questions:', error);
-      }
-    };
-
-    if (quizStarted && questions.length === 0) {
-      fetchQuestions();
-    }
-  }, [difficulty, quizStarted, questions]);
-
-  const onStartQuiz = () => {
-    if (difficulty) {
-      setQuizStarted(true);
-    }
-  };
-
-  const onFinishQuiz = () => {
-    setQuizFinished(true);
-  };
-
   return (
-    <div className="App">
-      <h1>React Quizzer</h1>
-      <h2>Choose Difficulty:</h2>
-      <DifficultySelector setDifficulty={setDifficulty} />
-      {difficulty && !quizStarted && (
-        <button onClick={onStartQuiz}>Start Quiz</button>
-      )}
-      {quizStarted && questions.length > 0 && !quizFinished && (
-        <Questions questions={questions} onFinishQuiz={onFinishQuiz} />
-      )}
-      {quizFinished && <Result />}
-    </div>
+    <Router>
+      <div className="App">
+        <Route path="/Home" exact component={Home} />
+        <Route path="/Quiz" component={Quiz} />
+        <Route path="/results" component={results} />
+        {/*Render DifficultySelector and Questions components outside of Switch */}
+        <DifficultySelector />
+        <Questions />
+      </div>
+    </Router>
   );
 }
 

@@ -12,53 +12,44 @@ h1 {
 .subtitle {
   font-size: 24px;
   margin-bottom: 10px;
+}
 
-  .header,
-  h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: brown;
-  }
+.header,
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: brown;
+}
 
-  .subtitle {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+.subtitle {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
-  .difficulty-selector {
-    margin-bottom: 20px;
-  }
+.difficulty-selector {
+  margin-bottom: 20px;
+}
 
-  .difficulty-selector button {
-    margin-bottom: 20px;
-    font-size: 30px;
-    padding: 15px;
-    display: inline-flex;
-    margin: 20px;
-    transition: background-color 0.3s;
-  }
+.difficulty-selector button {
+  margin-bottom: 20px;
+  font-size: 30px;
+  padding: 15px;
+  display: inline-flex;
+  margin: 20px;
+  transition: background-color 0.3s;
+}
 
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
-  .App-link {
-    color: #61dafb;
-  }
-
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
+.App-link {
+  color: #61dafb;
+}

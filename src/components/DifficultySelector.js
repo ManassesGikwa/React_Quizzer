@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const DifficultySelector = ({ onStartQuiz }) => {
+function DifficultySelector() {
   return (
-    <div className="difficulty-selector">
-      <button className="difficulty-button" onClick={() => onStartQuiz('Easy')}>
-        Easy
-      </button>
-      <button className="difficulty-button" onClick={() => onStartQuiz('Hard')}>
-        Hard
-      </button>
+    <div>
+      <h2>Choose Difficulty</h2>
+
+      <Link to="/quiz?difficulty=easy">
+        <button>Easy</button>
+      </Link>
+      <Link to="/quiz?difficulty=hard">
+        <button>Hard</button>
+      </Link>
     </div>
   );
-};
+}
 
 export default DifficultySelector;
