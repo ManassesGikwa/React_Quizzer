@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Quiz from './Quiz';
 import Result from './Result';
-import DifficultySelector from './DifficultySelector'; // Importing DifficultySelector component
-import Questions from './Questions'; // Importing Questions component
+import DifficultySelector from './DifficultySelector';
+import Questions from './Questions'; 
 
 function App() {
   return (
