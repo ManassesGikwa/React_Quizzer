@@ -71,3 +71,5 @@ const Question = () => {
     }
   }
 }
+
+export default questions;
