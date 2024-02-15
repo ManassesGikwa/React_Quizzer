@@ -55,7 +55,8 @@ const Questions = () => {
   };
 
   const handleQuit = () => {
-    navigate(`/result?easyScore=${easyScore}&hardScore=${hardScore}`);
+    // Navigate to the home page when quitting
+    navigate('/');
   };
 
   return (
