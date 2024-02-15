@@ -1,6 +1,6 @@
-mport React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
+import DifficultySelector from './DifficultySelector'
 function Home() {
   return (
     <div>
