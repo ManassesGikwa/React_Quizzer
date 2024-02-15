@@ -1,9 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Result = ({ easyScore, hardScore }) => {
   const totalScore = easyScore + hardScore;
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     updateResult(totalScore);
@@ -30,15 +31,29 @@ const Result = ({ easyScore, hardScore }) => {
     }
   };
 
+  const handleHome = () => {
+    // Navigate to the home page
+    navigate('/');
+  };
+
+  const handleRedo = () => {
+    // Handle redo logic, e.g., resetting scores and questions
+    // You might want to implement this based on your requirements
+    // For now, let's reload the page to start over
+    window.location.reload();
+  };
+
   return (
     <div>
       <h2>Quiz Completed!</h2>
       <p>Easy Score: {easyScore}</p>
       <p>Hard Score: {hardScore}</p>
       <p>Total Score: {totalScore}</p>
-      {totalScore > 8 && <p>Congratulations!</p>}
-      {totalScore < 5 && <p>Better luck next time!</p>}
+      {totalScore > 5 ? <p>Congratulations!</p> : null}
+      {totalScore < 5 ? <p>Better luck next time!</p> : null}
       <p>{message}</p>
+      <button onClick={handleHome}>Home</button>
+      <button onClick={handleRedo}>Re-do</button>
     </div>
   );
 };

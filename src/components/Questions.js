@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Result from './Results';
+
 
 const Questions = () => {
   const [questions, setQuestions] = useState([]);
@@ -62,13 +64,7 @@ const Questions = () => {
   return (
     <div>
       {quizCompleted ? (
-        <div>
-          <h2>Quiz Completed!</h2>
-          <p>Easy Score: {easyScore}</p>
-          <p>Hard Score: {hardScore}</p>
-          <button onClick={handleContinue}>Continue</button>
-          <button onClick={handleQuit}>Quit</button>
-        </div>
+        <Result easyScore={easyScore} hardScore={hardScore} /> // Pass scores to Result component
       ) : (
         <div>
           <h3>{questions[currentQuestionIndex]?.question}</h3>
