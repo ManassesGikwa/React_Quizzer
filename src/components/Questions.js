@@ -1,82 +1,75 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Questions = () => {
   const [questions, setQuestions] = useState([]);
-  const [currentSet, setCurrentSet] = useState(1);
-  const [currentQuestions, setCurrentQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(null);
   const [easyScore, setEasyScore] = useState(0);
-  const [hardScore, setHardScore] = useState(0); // Added hardScore
-
-  const fetchQuestions = async () => {
-    try {
-      const response = await fetch('https://react-quizer-vercel.vercel.app/questions');
-      const data = await response.json();
-      setQuestions(data);
-      shuffleAndSetQuestions(data);
-    } catch (error) {
-      console.error('Error fetching questions:', error);
-    }
-  };
-
-  const shuffleAndSetQuestions = (data) => {
-    const easyQuestions = data.filter(question => question.difficulty === 'Easy');
-    const hardQuestions = data.filter(question => question.difficulty === 'Hard'); // Added hardQuestions
-
-    const shuffledEasyQuestions = shuffleArray(easyQuestions);
-    const shuffledHardQuestions = shuffleArray(hardQuestions); // Added shuffledHardQuestions
-
-    setCurrentQuestions(shuffledEasyQuestions.slice(0, 5)); 
-  };
-
-  const shuffleArray = (array) => {
-    return array.sort(() => Math.random() - 0.5);
-  };
+  const [hardScore, setHardScore] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const difficulty = searchParams.get('difficulty');
 
   useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        const response = await fetch('https://react-quizer-vercel.vercel.app/questions');
+        const data = await response.json();
+        const filteredQuestions = data.filter(question => question.difficulty.toLowerCase() === difficulty.toLowerCase());
+        setQuestions(filteredQuestions);
+      } catch (error) {
+        console.error('Error fetching questions:', error);
+      }
+    };
+
     fetchQuestions();
-    
-  }, []);
+  }, [difficulty]);
 
-  const handleAnswer = (isCorrect, difficulty) => {
-    if (difficulty === 'Easy') {
-      if (isCorrect) {
-        setEasyScore(prevScore => prevScore + 1);
-      }
-    } else { // Handle hard questions
-      if (isCorrect) {
-        setHardScore(prevScore => prevScore + 1);
-      }
+  useEffect(() => {
+    if (questions.length > 0) {
+      shuffleQuestions();
     }
+  }, [questions]);
 
-    if (currentSet === 1 && currentQuestions.length === 5) {
-      setCurrentSet(2);
-      if (easyScore >= 3) {
-        setCurrentQuestions(questions.filter(question => question.difficulty === 'Easy').slice(5, 10));
-      } else {
-        //  logic to show hard questions with appropriate difficulty level and scoring mechanism
-        setCurrentQuestions(questions.filter(question => question.difficulty === 'Hard').slice(0, 5));
-      }
+  const shuffleQuestions = () => {
+    const shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+    setCurrentQuestionIndex(0);
+    setCurrentQuestion(shuffledQuestions[0]);
+  };
+
+  const handleOptionSelect = (selectedOption) => {
+    const currentQuestion = questions[currentQuestionIndex];
+    const isCorrect = selectedOption === currentQuestion.answer;
+    if (currentQuestion.difficulty === 'Easy') {
+      setEasyScore(prevScore => prevScore + (isCorrect ? 1 : 0));
     } else {
-      // Quiz completed,
+      setHardScore(prevScore => prevScore + (isCorrect ? 1 : 0));
+    }
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+      setCurrentQuestion(questions[currentQuestionIndex + 1]);
+    } else {
+      // Navigate to the results page when all questions are answered
+      navigate('/results', { state: { easyScore, hardScore } });
     }
   };
 
   return (
     <div>
-      {currentQuestions.map((question, index) => (
-        <div key={question.id}>
-          <h3>{question.question}</h3>
+      {currentQuestion && (
+        <div key={currentQuestion.id}>
+          <h3>{currentQuestion.question}</h3>
           <ul>
-            {question.options.map((option, optionIndex) => (
+            {currentQuestion.options.map((option, optionIndex) => (
               <li key={optionIndex}>
-                <button onClick={() => handleAnswer(option === question.answer, question.difficulty)}>
-                  {option}
-                </button>
+                <button onClick={() => handleOptionSelect(option)}>{option}</button>
               </li>
             ))}
           </ul>
         </div>
-      ))}
+      )}
     </div>
   );
 };
