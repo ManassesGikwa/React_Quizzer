@@ -10,13 +10,13 @@ const Home = () => (
     <div id='home'>
        <section>
         <div>
-
+        
         </div>
         <h1>REACT QUIZZER</h1>
         <h2>Choose Difficulty</h2>
         <div className='DifficultySelector-container'>
-          <Link to="/DifficultySelector-easy">Easy</Link>
-          <Link to="/DifficultySelector-hard">Hard</Link>
+          <Link to="/easy">Easy</Link>
+          <Link to="/hard">Hard</Link>
         </div>
         <div className='Start-Quiz-button-container'>
             <ul>
