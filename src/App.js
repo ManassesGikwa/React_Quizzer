@@ -9,13 +9,11 @@ import Questions from './Questions'; // Importing Questions component
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/home" exact component={Home} />
-          <Route path="/quiz" component={Quiz} />
-          <Route path="/result" component={Result} />
-        </Switch>
-      </div>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="/difficulty-selector" element={<DifficultySelector />} />
+      </Routes>
     </Router>
   );
 }
