@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/questions" element={<Questions />} />
         <Route path="/results" element={<Results />} />
-        <Route path="/difficulty" element={<DifficultySelector />} /> {/* Add route for DifficultySelector */}
+        <Route path="/difficulty" element={<DifficultySelector />} />
       </Routes>
     </Router>
   );
