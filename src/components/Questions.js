@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Questions = () => {
+const Questions = ({ difficulty }) => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [easyScore, setEasyScore] = useState(0);
@@ -14,7 +14,9 @@ const Questions = () => {
     try {
       const response = await fetch('https://react-quizer-vercel.vercel.app/questions');
       const data = await response.json();
-      setQuestions(shuffleArray(data));
+      const easyQuestions = data.slice(0, 10);
+      const hardQuestions = data.slice(10, 20);
+      setQuestions(difficulty === 'easy' ? shuffleArray(easyQuestions) : shuffleArray(hardQuestions));
     } catch (error) {
       console.error('Error fetching questions:', error);
     }
@@ -26,7 +28,7 @@ const Questions = () => {
 
   useEffect(() => {
     fetchQuestions();
-  }, []);
+  }, [difficulty]);
 
   const handleOptionSelect = (selectedOption) => {
     setSelectedOption(selectedOption);
@@ -50,34 +52,21 @@ const Questions = () => {
       } else {
         setQuizCompleted(true);
       }
-    }, 1000); // Delay for 1 second before moving to the next question
+    }, 500); // Delay for 0.5 seconds before moving to the next question
   };
 
-  const handleRedo = () => {
+  const handleContinue = () => {
     setCurrentQuestionIndex(0);
     setEasyScore(0);
     setHardScore(0);
     setQuizCompleted(false);
-    setQuestions(shuffleArray(questions));
+    fetchQuestions(); // Fetch new questions after continuing
   };
 
-  const handleHome = () => {
+  const handleQuit = () => {
     // Navigate to the home page when quitting
     navigate('/');
   };
-
-  // Calculate total score and message
-  const totalScore = easyScore + hardScore;
-  let message = '';
-  if (quizCompleted) {
-    if (totalScore > 8) {
-      message = '🎉 Congratulations! You did great!';
-    } else if (totalScore < 5) {
-      message = '😔 Better luck next time!';
-    } else {
-      message = '👍 Good job!';
-    }
-  }
 
   return (
     <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px', background: '#f7f7f7', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
@@ -86,10 +75,8 @@ const Questions = () => {
           <h2>Quiz Completed!</h2>
           <p>Easy Score: {easyScore}</p>
           <p>Hard Score: {hardScore}</p>
-          <p>Total Score: {totalScore}</p>
-          <p>{message}</p>
-          <button style={{ marginRight: '10px' }} onClick={handleRedo}>Redo</button>
-          <button onClick={handleHome}>Home</button>
+          <button style={{ marginRight: '10px' }} onClick={handleContinue}>Continue</button>
+          <button onClick={handleQuit}>Quit</button>
         </div>
       ) : (
         <div>
