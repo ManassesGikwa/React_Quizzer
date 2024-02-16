@@ -66,6 +66,19 @@ const Questions = () => {
     navigate('/');
   };
 
+  // Calculate total score and message
+  const totalScore = easyScore + hardScore;
+  let message = '';
+  if (quizCompleted) {
+    if (totalScore > 8) {
+      message = '🎉 Congratulations! You did great!';
+    } else if (totalScore < 5) {
+      message = '😔 Better luck next time!';
+    } else {
+      message = '👍 Good job!';
+    }
+  }
+
   return (
     <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px', background: '#f7f7f7', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
       {quizCompleted ? (
@@ -73,6 +86,8 @@ const Questions = () => {
           <h2>Quiz Completed!</h2>
           <p>Easy Score: {easyScore}</p>
           <p>Hard Score: {hardScore}</p>
+          <p>Total Score: {totalScore}</p>
+          <p>{message}</p>
           <button style={{ marginRight: '10px' }} onClick={handleRedo}>Redo</button>
           <button onClick={handleHome}>Home</button>
         </div>
