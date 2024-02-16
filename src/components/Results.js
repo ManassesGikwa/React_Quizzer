@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-function Result({ easyScore, hardScore }) {
+const Result = ({ easyScore, hardScore }) => {
   const totalScore = easyScore + hardScore;
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    // Update result on the server when the component mounts
     updateResult(totalScore);
   }, [totalScore]);
 
@@ -41,6 +40,6 @@ function Result({ easyScore, hardScore }) {
       <p>{message}</p>
     </div>
   );
-}
+};
 
 export default Result;

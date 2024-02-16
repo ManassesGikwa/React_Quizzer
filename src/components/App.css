@@ -1,103 +1,98 @@
 
-.first-frame {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: #f2f2f2; 
-    padding: 20px;
-  }
-  
-  .title {
-    font-size: 24px;
-  }
-  
-  .pitch-bar {
-    border: 2px solid #000; 
-    padding: 10px;
-  }
-  
-  .choose-difficulty {
-    margin-top: 20px;
-  }
-  
-  .button {
-    margin-top: 10px;
-    background-color: hsl(0, 52%, 89%); 
-    color: #f7e3e3;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  
-  .second-frame {
-    display: flex;
-    background-color: #f2f2f2; 
-    padding: 20px;
-  }
-  
-  .questions-title {
-    font-size: 18px;
-    margin-right: auto;
-  }
-  
-  .question-values {
-    font-size: 18px;
-    margin-left: auto;
-  }
-  
-  .question-bar {
-    border: 2px solid #000;
-    padding: 20px;
-  }
-  
-  .question-statement {
-    margin-top: 20px;
-  }
-  
-  .choices {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  
-  .choice {
-    margin-bottom: 10px;
-  }
-  
-  .next-question {
-    background-color: green;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  
-  .third-frame {
-    background-color: #f2f2f2; 
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    height: 100vh;
+    background-image: url('https://c1.wallpaperflare.com/preview/83/742/354/question-mark-why-problem-solution.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
     padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
   }
   
-  .score {
-    font-size: 24px;
+  h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: auto;
+    color: #cf4812;
   }
   
-  .final-round {
-    margin-top: 20px;
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #c5c1c1;
   }
   
-  .homepage-button {
-    margin-top: 20px;
-    background-color: #666; 
-    color: #fff;
-    padding: 10px 20px;
+  h5 {
+    font-size: 1rem;
+    color: azure;
+  }
+  
+  h3 {
+    font-size: 3rem;
+    color: azure;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+    color: rgb(158, 236, 236);
+  }
+  
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #111010;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  button {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    margin: 0 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f18136;
+    color: #fff;
   }
   
+  button:hover {
+    background-color: #0b9629;
+  }
+  
+  button.easy {
+    background-color: #28a745;
+  }
+  
+  button.easy:hover {
+    background-color: #218838;
+  }
+  
+  button.hard {
+    background-color: #dc3545;
+  }
+  
+  button.hard:hover {
+    background-color: #c82333;
+  }
