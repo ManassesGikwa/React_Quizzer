@@ -2,18 +2,15 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('https://media.istockphoto.com/id/517305732/photo/react-cubics.jpg?s=612x612&w=0&k=20&c=1v0KlFJE3fDItP18N0U0pDurHTyMrPWIfnTi2-l_Oww=');
+  background-image: url('https://c1.wallpaperflare.com/preview/83/742/354/question-mark-why-problem-solution.jpg');
   background-size: cover;
   background-position: center;
-
-
 }
 
 .container {
@@ -21,27 +18,33 @@ body {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 h1 {
   font-size: 5rem;
-  margin-bottom: 20px;
-  color: #a3a3a5;
-  margin-bottom: 80%;
-
-
-
+  font-weight: bold;
+  margin-bottom: auto;
+  color: #cf4812;
 }
 
 h2 {
   font-size: 3rem;
   margin-bottom: 20px;
   color: #c5c1c1;
+}
 
+h5 {
+  font-size: 1rem;
+  color: azure;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 3rem;
   color: azure;
 }
 
@@ -59,6 +62,7 @@ p {
 .buttons-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 30px;
 }
 
@@ -70,17 +74,12 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: #37393b;
+  background-color: #f18136;
   color: #fff;
 }
 
 button:hover {
   background-color: #0b9629;
-}
-
-button,
-Home:hover {
-  background-color: #9e083a;
 }
 
 button.easy {
@@ -97,14 +96,4 @@ button.hard {
 
 button.hard:hover {
   background-color: #c82333;
-}
-
-.link {
-  text-decoration: none;
-  color: #007bff;
-  transition: all 0.3s ease;
-}
-
-.link:hover {
-  color: #0056b3;
 }

@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 function Home() {
     return (
         <div>
-            <h1>REACT QUIZZER</h1>
-            <h3>Welcome to React Quizzer 👐</h3>
-            <h3>A trivia quiz application built with React!</h3>
+
+            <h1>Welcome to React Quizzer 👐</h1>
+            <h5>A trivia quiz application built with React!</h5>
+
             <div>
                 <h4>Choose Difficulty</h4>
                 <Link to="/questions">
