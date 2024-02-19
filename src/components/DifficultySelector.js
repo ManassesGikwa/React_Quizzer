@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import { Link } from 'react-router-dom';
 
@@ -18,6 +19,8 @@
 // export default DifficultySelector;
 
 
+=======
+>>>>>>> Manasses
 import React from 'react';
 import { Link } from 'react-router-dom';
 

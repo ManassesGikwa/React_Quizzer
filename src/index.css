@@ -1,8 +1,12 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
+<<<<<<< HEAD
   background-color: #f1a00a;
   /* Set your desired background color */
+=======
+  background-color: #f1a00a; /* Set your desired background color */
+>>>>>>> Manasses
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -79,4 +83,8 @@ h2 {
   background-color: #218838;
 }
 
+<<<<<<< HEAD
 /* Add more styles as needed for your specific components and pages */
+=======
+/* Add more styles as needed for your specific components and pages */
+>>>>>>> Manasses

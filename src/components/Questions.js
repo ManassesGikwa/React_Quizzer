@@ -81,37 +81,8 @@ const Questions = () => {
   }
 
   return (
-    <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px', background: '#f7f7f7', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
-      {quizCompleted ? (
-        <div style={{ textAlign: 'center' }}>
-          <h2>Quiz Completed!</h2>
-          <p>Easy Score: {easyScore}</p>
-          <p>Hard Score: {hardScore}</p>
-          <p>Total Score: {totalScore}</p>
-          <p>{message}</p>
-          <button style={{ marginRight: '10px' }} onClick={handleRedo}>Redo</button>
-          <button onClick={handleHome}>Home</button>
-        </div>
-      ) : (
-        <div>
-          <h3 style={{ background: '#6c757d', color: '#fff', padding: '10px', borderRadius: '4px', marginBottom: '20px' }}>{questions[currentQuestionIndex]?.question}</h3>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            {questions[currentQuestionIndex]?.options.map((option, optionIndex) => (
-              <li key={optionIndex}>
-                <button
-                  style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '4px', border: 'none', background: selectedOption === option ? (option === questions[currentQuestionIndex]?.answer ? 'green' : 'red') : '#fff', color: '#000', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}
-                  onClick={() => handleOptionSelect(option)}
-                  disabled={selectedOption !== null} // Disable button after selecting an option
-                >
-                  {option}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
-};
+    <div>Questions</div>
+  )
+}
 
-export default Questions;
+export default Questions
