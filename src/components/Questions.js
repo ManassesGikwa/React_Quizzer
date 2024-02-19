@@ -14,7 +14,8 @@ const Questions = () => {
     try {
       const response = await fetch('https://react-quizer-vercel.vercel.app/questions');
       const data = await response.json();
-      setQuestions(shuffleArray(data));
+      const shuffledQuestions = shuffleArray(data).slice(0, 5); // Take the first 5 questions
+      setQuestions(shuffledQuestions);
     } catch (error) {
       console.error('Error fetching questions:', error);
     }
